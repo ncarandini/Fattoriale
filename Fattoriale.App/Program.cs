@@ -6,6 +6,7 @@ namespace Fattoriale.App
     {
         static void Main(string[] args)
         {
+            //modifica enzo
             Console.WriteLine("Hello World!");
 
             Console.Write("Inserisci n: ");
