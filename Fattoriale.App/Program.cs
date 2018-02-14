@@ -8,9 +8,13 @@ namespace Fattoriale.App
         {
             //modifica enzo
             Console.WriteLine("Hello World!");
+    
 
             Console.Write("Inserisci n: ");
             string s = Console.ReadLine();
+            char[] input = s.ToCharArray();
+          
+
             if (int.TryParse(s, out int n))
             {
                 int result = Fattoriale(n);
