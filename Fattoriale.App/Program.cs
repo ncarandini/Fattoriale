@@ -6,19 +6,55 @@ namespace Fattoriale.App
     {
         static void Main(string[] args)
         {
-            //modifica enzo
+            
             Console.WriteLine("Hello World!");
 
-            Console.Write("Inserisci n: ");
-            string s = Console.ReadLine();
-            if (int.TryParse(s, out int n))
+            //modifica enzo
+            bool corretto = false;
+
+            //modifica enzo
+            while (!corretto)
             {
-                int result = Fattoriale(n);
-                Console.WriteLine($"Il fattoriale di {n} è pari a {result}");
+
+                Console.Write("Inserisci n: ");
+                string s = Console.ReadLine();
+
+                if (int.TryParse(s, out int n))
+                {
+                    corretto = true;
+                    int result = Fattoriale(n);
+                    Console.WriteLine($"Il fattoriale di {n} è pari a {result}");
+                }
+                else
+                {
+                    Console.WriteLine("Il parametro inserito non è un numero. Riprovare.");
+                }
+
             }
 
-            Console.Write("Premi un tasto per terminare...");
-            Console.ReadKey();
+            //modifica enzo
+            corretto = false;
+
+            //modifica enzo
+            Console.WriteLine("Premere 0, T oppure t per terminare");
+            string exit = Console.ReadLine();
+
+            while (!corretto)
+            {
+                
+                if ((exit.Equals("0")) || (exit.Equals("T")) || (exit.Equals("t")))
+                {
+                    
+                    corretto = true;
+                    
+                }
+                else
+                {
+                    exit = Console.ReadLine();
+                    
+                }
+            }
+
         }
 
         static int Fattoriale(int n)
