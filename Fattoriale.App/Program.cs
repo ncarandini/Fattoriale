@@ -21,6 +21,7 @@ namespace Fattoriale.App
             Console.ReadKey();
         }
 
+        // Ho ragione io!
         static int Fattoriale(int n)
         {
             if (n < 2)
