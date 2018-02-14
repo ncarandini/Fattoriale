@@ -23,7 +23,7 @@ namespace Fattoriale.App
 
         static int Fattoriale(int n)
         {
-            if (n < 3)
+            if (n < 2)
             {
                 return 1;
             }
