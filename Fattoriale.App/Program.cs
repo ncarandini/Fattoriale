@@ -21,18 +21,16 @@ namespace Fattoriale.App
             Console.ReadKey();
         }
 
+        // Ho ragione io!
         static int Fattoriale(int n)
         {
-        
-            if (n<2)
+            if (n < 2)
             {
                 return 1;
             }
-            else
-            {
-                return Fattoriale(n-1)*n;
-            }
-            
+
+            return n * Fattoriale(n - 1);
+
         }
     }
 }
