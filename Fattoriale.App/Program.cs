@@ -23,6 +23,19 @@ namespace Fattoriale.App
 
         static int Fattoriale(int n)
         {
+            //modifica aladino
+            if(n == 0 || n ==1)
+            {
+                return 1;
+            }
+            else if(n == 2)
+            {
+                return 2;
+            }
+            else if(n > 2)
+            {
+                return n * Fattoriale(n-1);
+            }
             return 0;
         }
     }
