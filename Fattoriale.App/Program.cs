@@ -24,6 +24,11 @@ namespace Fattoriale.App
         // Ho ragione io!
         static int Fattoriale(int n)
         {
+            if (n < 0)
+            {
+                throw new ArgumentException("Il valore non può essere negativo");
+            }
+
             if (n < 2)
             {
                 return 1;
