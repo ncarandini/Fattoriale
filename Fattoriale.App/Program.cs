@@ -6,41 +6,72 @@ namespace Fattoriale.App
     {
         static void Main(string[] args)
         {
-            //modifica enzo
+            
             Console.WriteLine("Hello World!");
-    
 
-            Console.Write("Inserisci n: ");
-            string s = Console.ReadLine();
-            char[] input = s.ToCharArray();
-          
+            //modifica enzo
+            bool corretto = false;
 
-            if (int.TryParse(s, out int n))
+            //modifica enzo
+            while (!corretto)
             {
-                int result = Fattoriale(n);
-                Console.WriteLine($"Il fattoriale di {n} è pari a {result}");
+
+                Console.Write("Inserisci n: ");
+                string s = Console.ReadLine();
+
+                if (int.TryParse(s, out int n))
+                {
+                    corretto = true;
+                    int result = Fattoriale(n);
+                    Console.WriteLine($"Il fattoriale di {n} è pari a {result}");
+                }
+                else
+                {
+                    Console.WriteLine("Il parametro inserito non è un numero. Riprovare.");
+                }
+
             }
 
-            Console.Write("Premi un tasto per terminare...");
-            Console.ReadKey();
+            //modifica enzo
+            corretto = false;
+
+            //modifica enzo
+            Console.WriteLine("Premere 0, T oppure t per terminare");
+            string exit = Console.ReadLine();
+
+            while (!corretto)
+            {
+                
+                if ((exit.Equals("0")) || (exit.Equals("T")) || (exit.Equals("t")))
+                {
+                    
+                    corretto = true;
+                    
+                }
+                else
+                {
+                    exit = Console.ReadLine();
+                    
+                }
+            }
+
         }
 
+        // Ho ragione io!
         static int Fattoriale(int n)
         {
-            //modifica aladino
-            if(n == 0 || n ==1)
+            if (n < 0)
+            {
+                throw new ArgumentException("Il valore non può essere negativo");
+            }
+
+            if (n < 2)
             {
                 return 1;
             }
-            else if(n == 2)
-            {
-                return 2;
-            }
-            else if(n > 2)
-            {
-                return n * Fattoriale(n-1);
-            }
-            return 0;
+
+            return n * Fattoriale(n - 1);
+
         }
     }
 }
